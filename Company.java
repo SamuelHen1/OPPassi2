@@ -36,5 +36,9 @@ public abstract class Company {
         //employees.get(id).setSalary(newSalary);
         System.out.println("hello");
     }
+    public void printEmployee(String id){
+        System.out.println(retrieveEmployee(id));
+
+    }
 }
 
