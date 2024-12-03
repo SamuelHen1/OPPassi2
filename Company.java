@@ -22,14 +22,12 @@ public abstract class Company {
         employees.remove(employee);
     }
     public void updateName(String id, String newName){
-        Employee employee = retriveEmployee(id);
+        Employee employee =retriveEmployee(id);
         employee.setName(newName);
         System.out.println();
     }
     public void updateSalary(String id, double newSalary){
-        Employee employee = retriveEmployee(id);
-        employee.setSalary(newSalary);
-        System.out.println();
+        employees.get(id).setSalary(newSalary);
     }
 }
 
