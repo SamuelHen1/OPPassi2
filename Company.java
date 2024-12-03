@@ -33,7 +33,8 @@ public abstract class Company {
     }
     public void updateSalary(String id, double newSalary){
 
-        employees.get(id).setSalary(newSalary);
+        //employees.get(id).setSalary(newSalary);
+        System.out.println("hello");
     }
 }
 
