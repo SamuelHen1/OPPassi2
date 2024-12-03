@@ -3,13 +3,13 @@ public abstract class Company {
     ArrayList<Employee> employees;
 
 
-    public Employee retriveEmployee(String id){
+    public Employee retrieveEmployee(String id){
         for(Employee employee: employees){
             if ((employee.getEmployeeId()).equals(id)){
                 return employee;
             }
-
         }
+
         return null;
     }
     public void createEmployee(String id, String name, double grossSalary){
@@ -18,15 +18,21 @@ public abstract class Company {
 
     }
     public void removeEmployee(String id){
-        Employee employee = retriveEmployee(id);
+        Employee employee = retrieveEmployee(id);
+        if (isinstance(employee,null)){
+            System.out.println("booo");
+        }
+        else{
         employees.remove(employee);
+        }
     }
     public void updateName(String id, String newName){
-        Employee employee =retriveEmployee(id);
+        Employee employee = retrieveEmployee(id);
         employee.setName(newName);
         System.out.println();
     }
     public void updateSalary(String id, double newSalary){
+
         employees.get(id).setSalary(newSalary);
     }
 }
