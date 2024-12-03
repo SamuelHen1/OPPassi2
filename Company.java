@@ -19,7 +19,7 @@ public abstract class Company {
     }
     public void removeEmployee(String id){
         Employee employee = retrieveEmployee(id);
-        if (isinstance(employee,null)){
+        if (employee == null){
             System.out.println("booo");
         }
         else{
