@@ -8,7 +8,7 @@ public class Manager extends Employee {
 
     }
 
-    public void calSalary(String degree){
+    public void calculateSalary(String degree){
         if (Objects.equals(degree, "BCs")){
             grossSalary = grossSalary
         }
