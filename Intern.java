@@ -7,7 +7,23 @@ public class Intern extends Employee {
     }
 
     public String getEmployeeId(){
+
         return id;
+    }
+    //BRO CHANGE THIS SIVERT
+    @Override
+    public double getGrossSalary() {
+        return 0;
+    }
+
+    @Override
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    @Override
+    public void setGrossSalary(double newGrossSalary) {
+        grossSalary = newGrossSalary;
     }
 
     public double getGrossSalary(int gpa,double grossSalary){
@@ -31,6 +47,7 @@ public class Intern extends Employee {
     }
 
     public void setGPA(int gpa) {
+
         this.gpa = gpa;
     }
 

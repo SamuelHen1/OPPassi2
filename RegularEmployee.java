@@ -6,10 +6,25 @@ public class RegularEmployee extends Employee{
     }
 
     public String getEmployeeId(){
+
         return id;
     }
 
+    @Override
+    public double getGrossSalary() {
 
+        return grossSalary;
+    }
+
+    @Override
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    @Override
+    public void setGrossSalary(double newGrossSalary) {
+        grossSalary = newGrossSalary;
+    }
 
 
     public String printEmployee(Employee employee){

@@ -1,6 +1,3 @@
-import java.sql.Array;
-import java.util.ArrayList;
-
 public abstract class Employee {
 
     String id;
@@ -15,5 +12,11 @@ public abstract class Employee {
 
     public abstract String getEmployeeId();
 
-    public abstract String getNetSalary();
+    public abstract double getGrossSalary();
+
+    public abstract void setName(String newName);
+
+    public abstract void setGrossSalary(double grossSalary);
+
 }
+
