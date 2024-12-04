@@ -34,7 +34,8 @@ public abstract class Company {
         employees.add(employee);
     }
     // For the directors
-    public void createEmployee(String id, String name, double grossSalary, String degree, String Department){
+
+    public void createEmployee(String id, String name, double grossSalary, String degree, String department){
         Employee employee = new Employee(id, name, grossSalary, degree, department);
         employees.add(employee);
     }
@@ -56,12 +57,29 @@ public abstract class Company {
     }
     public void updateSalary(String id, double newSalary){
 
-        //employees.get(id).setSalary(newSalary);
-        System.out.println("hello");
+        Employee employee = retrieveEmployee(id);
+        employee.setSalary(newSalary);
     }
-    public void printEmployee(String id){
-        System.out.println(retrieveEmployee(id));
+    public String printEmployee(String id){
+        Employee employee =retrieveEmployee(id);
+        return employee.getEmployeeInfo();
 
     }
+    public String printAllEmployees() {
+        StringBuilder result = new StringBuilder();
+        for(Employee employee: employees){
+           result.append(employee.getEmployeeInfo());
+        }
+        return result.toString();
+
+    }
+    public double getNetSalary(String id){
+        Employee employee =retrieveEmployee(id);
+        return employee.getNetSalary();
+    }
+    
+
+
+
 }
 

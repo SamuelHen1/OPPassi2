@@ -28,6 +28,7 @@ public class Employee {
         this.gpa = gpa;
     }
     // For the directors
+
     public Employee(String id, String name, String degree, String department){
         this.id = id;
         this.name = name;

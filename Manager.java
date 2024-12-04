@@ -10,7 +10,7 @@ public class Manager extends Employee {
 
     public void calculateSalary(String degree){
         if (Objects.equals(degree, "BCs")){
-            grossSalary = grossSalary
+            grossSalary += grossSalary *0.1;
         }
     }
 
