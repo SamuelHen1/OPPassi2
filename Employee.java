@@ -1,4 +1,17 @@
-public class Employee {
+import java.sql.Array;
+import java.util.ArrayList;
+
+public abstract class Employee {
+
+    String id;
+    String name;
+    String degree;
+    double grossSalary;
+    String department;
+
+    public abstract String printEmployee(Employee employee);
+
+    /*
     private String id;
     private String name;
     double grossSalary;
@@ -15,20 +28,17 @@ public class Employee {
 
     // For the managers
     public Employee(String id, String name, double grossSalary, String degree){
-        this.id = id;
-        this.name = name;
-        this.grossSalary = grossSalary;
-        this.degree = degree;
+
+        return new Manager(id,name,grossSalary,degree);
     }
     // For the students
     public Employee(String id, String name, int gpa){
         this.id = id;
         this.name = name;
-        this.grossSalary = grossSalary;
         this.gpa = gpa;
     }
     // For the directors
-    public Employee(String id, String name, String degree, String department){
+    public Employee(String id, String name,double grossSalary, String degree, String department){
         this.id = id;
         this.name = name;
         this.grossSalary = grossSalary;
@@ -42,10 +52,12 @@ public class Employee {
     public double getNetSalary(){
         return grossSalary - (grossSalary * 0.1);
     }
-    public String getEmployeeId(){
-        return id;
-    }
+    */
 
+    public abstract String getEmployeeId();
+
+
+    /*
     public double getGrossSalary() {
         return grossSalary;
     }
@@ -57,4 +69,6 @@ public class Employee {
         grossSalary = newSalary;
     }
 
+
+     */
 }

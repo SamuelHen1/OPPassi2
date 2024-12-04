@@ -1,6 +1,6 @@
 import java.util.*;
-public abstract class Company {
-    ArrayList<Employee> employees;
+public class Company {
+    ArrayList<Employee> employees = new ArrayList<>();
 
 
     public Employee retrieveEmployee(String id){
@@ -15,31 +15,47 @@ public abstract class Company {
 
 
     // For regular employees
+    /*
     public void createEmployee(String id, String name, double grossSalary){
          Employee employee = new Employee(id, name, grossSalary);
          employees.add(employee);
     }
 
 
+
+     */
     // For the managers
     public void createEmployee(String id, String name, double grossSalary, String degree){
-        Employee employee = new Employee(id, name, grossSalary, degree);
+        Employee employee = new Manager(id,name,grossSalary,degree);
         employees.add(employee);
     }
 
-
-    // For the students
+/*
+    // For the interns
     public void createEmployee(String id, String name, int gpa){
         Employee employee = new Employee(id, name,gpa);
         employees.add(employee);
     }
+
+ */
     // For the directors
-    public void createEmployee(String id, String name, double grossSalary, String degree, String Department){
-        Employee employee = new Employee(id, name, grossSalary, degree, department);
+    public void createEmployee(String id, String name, double grossSalary, String degree, String department){
+        Employee employee = new Director(id, name, grossSalary, degree, department);
         employees.add(employee);
     }
 
 
+    public void printEmployee(String id){
+        Employee employee = retrieveEmployee(id);
+        if (employee == null) {
+            System.out.println("fuck tsetsen");
+        }
+        else {
+            employee.printEmployee(employee);
+        }
+    }
+
+/*
     public void removeEmployee(String id){
         Employee employee = retrieveEmployee(id);
         if (employee == null){
@@ -49,6 +65,8 @@ public abstract class Company {
         employees.remove(employee);
         }
     }
+
+
     public void updateName(String id, String newName){
         Employee employee = retrieveEmployee(id);
         employee.setName(newName);
@@ -63,5 +81,8 @@ public abstract class Company {
         System.out.println(retrieveEmployee(id));
 
     }
+
+ */
 }
+
 
