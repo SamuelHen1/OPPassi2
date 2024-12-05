@@ -15,11 +15,6 @@ public class Intern extends Employee {
 
         return id;
     }
-    //BRO CHANGE THIS SIVERT
-    @Override
-    public double getGrossSalary() {
-        return 0;
-    }
 
     @Override
     public void setName(String newName) {
@@ -31,7 +26,7 @@ public class Intern extends Employee {
         grossSalary = parseDouble(String.format ("%.2f",newGrossSalary));
     }
 
-    public double getGrossSalary(int gpa,double grossSalary){
+    public double getGrossSalary(){
         double finalGrossSalary;
         int salaryBonus = 1000;
 
@@ -63,7 +58,7 @@ public class Intern extends Employee {
 
     public String printEmployee(Employee employee){
 
-        double truncatedSalary = truncateSalary(getGrossSalary(employee.gpa,employee.grossSalary));
+        double truncatedSalary = truncateSalary(getGrossSalary());
         String printMe = employee.name + "'s gross salary is " + String.format("%.2f",truncatedSalary) + " SEK per month. GPA: " + gpa;
         System.out.println(printMe);
         return printMe;

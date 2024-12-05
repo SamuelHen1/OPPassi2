@@ -179,12 +179,12 @@ public class Company {
         ArrayList<Employee> unsortedList = new ArrayList<>(employees);
 
         while (!unsortedList.isEmpty()){
-            double smallestSalary = unsortedList.get(0).grossSalary;
+            double smallestSalary = unsortedList.get(0).getGrossSalary();
             int knownIndex = 0;
 
             for(int i = 0; i < unsortedList.size(); i++){
                 Employee current = unsortedList.get(i);
-                if(current.grossSalary < smallestSalary ) {
+                if(current.getGrossSalary() < smallestSalary ) {
                     smallestSalary = current.grossSalary;
                     knownIndex = i;
                 }
@@ -192,7 +192,7 @@ public class Company {
             sortedList.add(unsortedList.get(knownIndex));
             unsortedList.remove(knownIndex);
         }
-        String message = "";
+        String message = "Employees sorted by gross salary (ascending order):\n";
         for(Employee employee: sortedList){
             message += printEmployee(employee.id)+"\n";
         }
@@ -202,7 +202,7 @@ public class Company {
 
 
     public String printAllEmployees() {
-        String message = "All registered employees: \n";
+        String message = "All registered employees:\n";
         for (Employee employee: employees){
             message += printEmployee(employee.id)+"\n";
         }
