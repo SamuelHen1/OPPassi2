@@ -179,13 +179,13 @@ public class Company {
         ArrayList<Employee> unsortedList = new ArrayList<>(employees);
 
         while (!unsortedList.isEmpty()){
-            double smallestSalary = unsortedList.get(0).getGrossSalary();
+            double smallestSalary = (unsortedList.get(0)).getGrossSalary();
             int knownIndex = 0;
 
             for(int i = 0; i < unsortedList.size(); i++){
                 Employee current = unsortedList.get(i);
                 if(current.getGrossSalary() < smallestSalary ) {
-                    smallestSalary = current.grossSalary;
+                    smallestSalary = current.getGrossSalary();
                     knownIndex = i;
                 }
             }
